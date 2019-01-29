@@ -1,13 +1,23 @@
-#### **Bank Library**
+## **Bank Library**
 
 A Spring Boot application which exposes these REST endpoints:
 
-**SWAGGER UI** : 
-http://localhost:8081/swagger-ui.html
-
 Technology - Java 11,Maven,Docker,Swagger 
 
-•	`GET /books - http://localhost:8081/books`
+#### **Run Docker file**
+* docker -v
+* docker build -f Dockerfile -t docker-rabobank-library .
+* docker images
+* docker run -p 8081:8081 docker-rabobank-library
+* docker ps -a
+* docker stop <container-id>
+
+**SWAGGER UI :**
+http://localhost:8081/swagger-ui.html
+
+#### Service
+
+##### •	`GET /books - http://localhost:8081/books`
 
 Returns a list of books. The books have an ISBN number, title and author. 
 
@@ -30,7 +40,7 @@ Output:
     }
 ]
 
-•	`GET /books/<isbn> - http://localhost:8081/books/1`
+##### •	`GET /books/<isbn> - http://localhost:8081/books/1`
 
 Returns the book with the given ISBN number. An additional field on the book object “summary” is also returned.
 
@@ -39,13 +49,16 @@ Output:
     "isbnNumber": "1",
     "title": "Lord of the Ring",
     "author": "Lord",
-    "summary": "This is Math Book"
+    "summary": "This is European Book"
 }
-•	GET /search<query> - http://localhost:8081/books/?author=earth&title=ring
+
+##### `•	GET /search<query> - http://localhost:8081/books/?author=earth&title=ring`
 
 Returns the books which match the query. You should be able to search for partial titles and authors. I.e. a search for “lord” finds “lord of the rings”.
 
-**NOTE:** As per my understanding , it has been done "?author=earth&title=lord" as query parameter But,it can also be done as "search=lord"
+##### **NOTE:**
+* As per my understanding , it has been done "?author=earth&title=lord" as query parameter But,it can also be done as "search=lord" ,which will search in title and author.
+* Endpoint of 1st & 3rd service is same.          
 Output:
 [
     {
@@ -85,11 +98,4 @@ Output:
 }
 
 
-**Run Docker file**
-* docker -v
-* docker build -f Dockerfile -t docker-rabobank-library .
-* docker images
-* docker run -p 8081:8081 docker-rabobank-library
-* docker ps -a
-* docker stop <container-id>
 
