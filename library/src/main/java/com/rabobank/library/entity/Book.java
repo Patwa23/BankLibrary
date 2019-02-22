@@ -1,18 +1,24 @@
 package com.rabobank.library.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Book {
     @NotNull(message="ISBN Number cannot be null")
+    @ApiModelProperty(notes="ISBN Number of Book")
     private String isbnNumber;
     @NotNull(message="Title cannot be null")
     @Size(min=3,message="Title must not be less than 3 characters")
+    @ApiModelProperty(notes="Title of Book")
     private String title;
     @NotNull(message="Author cannot be null")
     @Size(min=3,max=50,message="Author must be equal or greater than 3 characters and less than 50 characters")
+    @ApiModelProperty(notes="Author of Book")
     private String author;
     @Size(min=8,message="Title must not be less than 8 characters")
+    @ApiModelProperty(notes="Summary of Book")
     private String summary;
 
     public Book(String isbnNumber, String title, String author, String summary) {

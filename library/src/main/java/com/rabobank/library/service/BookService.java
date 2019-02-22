@@ -6,7 +6,6 @@ import com.rabobank.library.entity.BookDto;
 
 import com.rabobank.library.validation.PayloadValidation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.PayloadApplicationEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

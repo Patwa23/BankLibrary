@@ -5,7 +5,6 @@ import com.rabobank.library.entity.BookDto;
 import com.rabobank.library.transformer.BookToBookDtoTransformer;
 import com.rabobank.library.exceptions.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

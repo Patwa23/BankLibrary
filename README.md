@@ -12,12 +12,15 @@ Technology - Java 11,Maven,Docker,Swagger
 * docker ps -a
 * docker stop <container-id>
 
-**SWAGGER UI :**
-http://localhost:8081/swagger-ui.html
+#### **SWAGGER UI :**
+http://localhost:8081/prod/api/swagger-ui.html
+
+#### **Monitoring & Management over HTTP**
+http://localhost:9091/manage
 
 #### Service
 
-##### •	`GET /books - http://localhost:8081/books`
+##### •	`GET /books - http://localhost:8081/prod/api/books`
 
 Returns a list of books. The books have an ISBN number, title and author. 
 
@@ -40,7 +43,7 @@ Output:
     }
 ]
 
-##### •	`GET /books/<isbn> - http://localhost:8081/books/1`
+##### •	`GET /books/<isbn> - http://localhost:8081/prod/api/books/1`
 
 Returns the book with the given ISBN number. An additional field on the book object “summary” is also returned.
 
@@ -52,7 +55,7 @@ Output:
     "summary": "This is European Book"
 }
 
-##### `•	GET /search<query> - http://localhost:8081/books/?author=earth&title=ring`
+##### `•	GET /search<query> - http://localhost:8081/prod/api/books/?author=earth&title=ring`
 
 Returns the books which match the query. You should be able to search for partial titles and authors. I.e. a search for “lord” finds “lord of the rings”.
 
@@ -73,7 +76,7 @@ Output:
     }
 ]
 
-•	`POST /order	- http://localhost:8081/books`
+•	`POST /order	- http://localhost:8081/prod/api/books`
 
 **Input:**
 [
